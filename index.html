@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="pastlives.css">
+
+<style>
+</style>
+</head>
+<body onload="popdate()">
+<FORM>
+<INPUT TYPE="button" onClick="history.go(0)" VALUE="AGAIN!">
+</FORM>
+	<script
+		src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.2.min.js"></script>
+	<script src="PastLives.js"></script>
+
+
+	<br />
+	<div class="container">
+		<div class="rcorners1">
+			Name: You!<br /> Born:&nbsp;<input type="date" id="birthday">
+			<script>
+			var year = Math.floor((Math.random() * 99) + 1);
+			var month = Math.floor((Math.random() * 12) + 1);
+			var day = Math.floor((Math.random() * 29) + 1);
+			var date = month + "/" + day + "/19" + year ;
+			console.log(date);
+			document.getElementById('birthday').valueAsDate = new Date(date);
+			</script>
+			<br />
+		</div>
+		<div class="fixed" id="gobutton">
+			<br /> <br /> <br />
+			<button onclick="popdate()">Go</button>
+		</div>
+
+		<div id="templatepanel" class="rcorners1"  style="display:none">
+			<div id="person" onchange="lookmeup()">aa</div>
+			<div id="personborn">bb</div>
+			<div id="persondied"></div>
+			<div id="persondied"></div>
+		</div>
+		<div id="templatedone" class="rcorners1"  style="display:none">
+			That's all!<br />
+		</div>
+		<div id="templatearrow" class="fixed" style="display:none">
+			<br /> <br /> <br />
+			&rarr;
+		</div>
+		<div id="templatebutton" class="fixed" style="display:none">
+			<br /> <br /> <br />
+			<button onclick="popdate()">Go</button>
+		</div>
+
+	</div>
+</br>
+</br>
+	<div id="status"></div>
+
+
+</body>
+</html>
